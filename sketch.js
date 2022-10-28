@@ -6,9 +6,10 @@ function setup() {
   // get position once
 
   if (!navigator.geolocation) {
-    alert("navigator.geolocation is not available");
+    background(255,0,0);
+    text("navigator.geolocation is not available",30,30);
   }
-
+  navigator.geolocation.getCurrentPosition(setPos);
   setInterval(function () {
     navigator.geolocation.getCurrentPosition(setPos);
   }, 1000)
