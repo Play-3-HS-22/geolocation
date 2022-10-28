@@ -19,6 +19,12 @@ function setup() {
 
   navigator.geolocation.watchPosition(setPos)
 
+  navigator.geolocation.getCurrentPosition(setPos);
+
+  setInterval(function() {
+    navigator.geolocation.getCurrentPosition(setPos);
+  }, 1000);
+
 
   noLoop();
 }
