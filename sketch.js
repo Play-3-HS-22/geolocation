@@ -16,10 +16,8 @@ function setup() {
   if (!navigator.geolocation) {
     nogeo = true;
   }
-  navigator.geolocation.getCurrentPosition(setPos);
-  setInterval(function () {
-    navigator.geolocation.getCurrentPosition(setPos);
-  }, 500)
+
+  navigator.geolocation.watchPosition(setPos)
 
 
   noLoop();
